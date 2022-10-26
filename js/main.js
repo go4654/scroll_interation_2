@@ -28,7 +28,7 @@
         mainTitle_opacity: [1, 0, { start: 0, end: 0.2 }],
         mainTitle_translateY: [0, -40, { start: 0, end: 0.2 }],
 
-        line_1_scale: [0.03, 1, { start: 0, end: 0.2 }],
+        line_1_scale: [0.03, 1, { start: 0.2, end: 0.4 }],
         line_2_scale: [0.03, 1, { start: 0.1, end: 0.35 }],
         line_3_scale: [0.03, 1, { start: 0.175, end: 0.45 }],
         line_4_scale: [0.03, 1, { start: 0.4, end: 0.55 }],
@@ -43,14 +43,34 @@
     },
     {
       //1
+      type: "normal",
       heightNum: 5,
       scrollHeight: 0,
       el: {
         section: document.querySelector(".section_1"),
+        centerImg: document.querySelector(".section_1 .center_img"),
+        mainTitle: document.querySelector(".section_1 .main_title"),
+
+        line_1: document.querySelector(".section_1 .line_1"),
+        line_2: document.querySelector(".section_1 .line_2"),
+        line_3: document.querySelector(".section_1 .line_3"),
+        line_4: document.querySelector(".section_1 .line_4"),
+        line_5: document.querySelector(".section_1 .line_5"),
+      },
+      values: {
+        centerImg_translateY: [40, 0, { start: 0, end: 0.2 }],
+        mainTitle_translateY: [100, -200, { start: 0, end: 0.2 }],
+
+        line_1_scale: [0.03, 1, { start: 0.2, end: 0.4 }],
+        line_2_scale: [0.03, 1, { start: 0.3, end: 0.5 }],
+        line_3_scale: [0.03, 1, { start: 0.4, end: 0.6 }],
+        line_4_scale: [0.03, 1, { start: 0.5, end: 0.7 }],
+        line_5_scale: [0.03, 1, { start: 0.6, end: 0.8 }],
       },
     },
     {
       //2
+      type: "normal",
       heightNum: 5,
       scrollHeight: 0,
       el: {
@@ -136,25 +156,25 @@
           currentYOffset
         )}%,0)`;
 
-        el.title_1.style.transform = `translateX(${calcValues(
+        el.title_1.style.transform = `translate3d(${calcValues(
           values.title_1_translateX,
           currentYOffset
-        )}%)`;
+        )}%,0,0)`;
 
-        el.title_2.style.transform = `translateX(${calcValues(
+        el.title_2.style.transform = `translate3d(${calcValues(
           values.title_2_translateX,
           currentYOffset
-        )}%)`;
+        )}%,0,0)`;
 
-        el.title_3.style.transform = `translateX(${calcValues(
+        el.title_3.style.transform = `translate3d(${calcValues(
           values.title_3_translateX,
           currentYOffset
-        )}%)`;
+        )}%,0,0)`;
 
-        el.title_4.style.transform = `translateX(${calcValues(
+        el.title_4.style.transform = `translate3d(${calcValues(
           values.title_4_translateX,
           currentYOffset
-        )}%)`;
+        )}%,0,0)`;
 
         if (scrollRatio <= 0.22) {
           el.line_1.style.transform = `scale(${calcValues(
@@ -201,6 +221,53 @@
         break;
 
       case 1:
+        if (scrollRatio <= 0.22) {
+          el.centerImg.style.transform = `translate3d(0,${calcValues(
+            values.centerImg_translateY,
+            currentYOffset
+          )}%,0)`;
+
+          el.mainTitle.style.transform = `translate3d(-50%,${calcValues(
+            values.mainTitle_translateY,
+            currentYOffset
+          )}%,0)`;
+        }
+
+        if (scrollRatio <= 0.42) {
+          el.line_1.style.transform = `scale(${calcValues(
+            values.line_1_scale,
+            currentYOffset
+          )},1)`;
+        }
+
+        if (scrollRatio <= 0.52) {
+          el.line_2.style.transform = `scale(${calcValues(
+            values.line_2_scale,
+            currentYOffset
+          )},1)`;
+        }
+
+        if (scrollRatio <= 0.62) {
+          el.line_3.style.transform = `scale(${calcValues(
+            values.line_3_scale,
+            currentYOffset
+          )},1)`;
+        }
+
+        if (scrollRatio <= 0.72) {
+          el.line_4.style.transform = `scale(${calcValues(
+            values.line_4_scale,
+            currentYOffset
+          )},1)`;
+        }
+
+        if (scrollRatio <= 0.82) {
+          el.line_5.style.transform = `scale(${calcValues(
+            values.line_5_scale,
+            currentYOffset
+          )},1)`;
+        }
+
         break;
 
       case 2:
