@@ -61,30 +61,31 @@
         centerImg_translateY: [40, 0, { start: 0, end: 0.2 }],
         mainTitle_translateY: [100, -200, { start: 0, end: 0.2 }],
 
-        line_1_scale: [0.03, 1, { start: 0.2, end: 0.4 }],
-        line_2_scale: [0.03, 1, { start: 0.3, end: 0.5 }],
-        line_3_scale: [0.03, 1, { start: 0.4, end: 0.6 }],
-        line_4_scale: [0.03, 1, { start: 0.5, end: 0.7 }],
-        line_5_scale: [0.03, 1, { start: 0.6, end: 0.8 }],
+        line_1_scale: [0.03, 1, { start: 0.1, end: 0.3 }],
+        line_2_scale: [0.03, 1, { start: 0.2, end: 0.4 }],
+        line_3_scale: [0.03, 1, { start: 0.3, end: 0.5 }],
+        line_4_scale: [0.03, 1, { start: 0.4, end: 0.6 }],
+        line_5_scale: [0.03, 1, { start: 0.5, end: 0.7 }],
       },
     },
     {
       //2
       type: "normal",
-      heightNum: 5,
+      heightNum: 1,
       scrollHeight: 0,
       el: {
         section: document.querySelector(".section_2"),
       },
     },
-    {
-      //3
-      heightNum: 5,
-      scrollHeight: 0,
-      el: {
-        section: document.querySelector(".section_3"),
-      },
-    },
+    // {
+    //   //3
+    //   type: "normal",
+    //   heightNum: 5,
+    //   scrollHeight: 0,
+    //   el: {
+    //     section: document.querySelector(".section_3"),
+    //   },
+    // },
   ];
 
   const setLayout = () => {
@@ -233,35 +234,35 @@
           )}%,0)`;
         }
 
-        if (scrollRatio <= 0.42) {
+        if (scrollRatio <= 0.32) {
           el.line_1.style.transform = `scale(${calcValues(
             values.line_1_scale,
             currentYOffset
           )},1)`;
         }
 
-        if (scrollRatio <= 0.52) {
+        if (scrollRatio <= 0.42) {
           el.line_2.style.transform = `scale(${calcValues(
             values.line_2_scale,
             currentYOffset
           )},1)`;
         }
 
-        if (scrollRatio <= 0.62) {
+        if (scrollRatio <= 0.52) {
           el.line_3.style.transform = `scale(${calcValues(
             values.line_3_scale,
             currentYOffset
           )},1)`;
         }
 
-        if (scrollRatio <= 0.72) {
+        if (scrollRatio <= 0.62) {
           el.line_4.style.transform = `scale(${calcValues(
             values.line_4_scale,
             currentYOffset
           )},1)`;
         }
 
-        if (scrollRatio <= 0.82) {
+        if (scrollRatio <= 0.72) {
           el.line_5.style.transform = `scale(${calcValues(
             values.line_5_scale,
             currentYOffset
